@@ -18,28 +18,27 @@ public class EntryService {
 
 
     public Entry createEntry(Entry entry) {
-        repository.save(entry);
 
-        return entry;
+        return repository.save(entry);
 
     }
 
     public List<Entry> getAllEntries() {
+
         return repository.findAll();
 
     }
 
     public Entry getEntry(Long id) throws EntryNotFoundException {
-        Entry entry = repository.findById(id)
-            .orElseThrow(() -> new EntryNotFoundException(id));
         
-        return entry;
+        return repository.findById(id)
+            .orElseThrow(() -> new EntryNotFoundException(id));
 
     }
 
     public Entry updateEntry(Long id, Entry newEntry) {
 
-        Entry updatedEntry = repository.findById(id).map(entry -> {
+        return repository.findById(id).map(entry -> {
             entry.setSubject(newEntry.getSubject());
             entry.setTitle(newEntry.getTitle());
             entry.setNote(newEntry.getNote());
@@ -48,11 +47,10 @@ public class EntryService {
 
         }).orElseThrow(() -> new EntryNotFoundException(id));
 
-        return updatedEntry;
-
     }
 
-    public Entry deleteEntryById(Long id) {
+    public Entry deleteEntry(Long id) {
+
         return repository.findById(id).orElse(null);
 
     }
