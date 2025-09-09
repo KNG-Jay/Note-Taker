@@ -13,7 +13,7 @@ import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 
 @Entity
-@Getter @Setter(AccessLevel.PRIVATE)
+@Getter @Setter
 @AllArgsConstructor
 public class Entry {
     
