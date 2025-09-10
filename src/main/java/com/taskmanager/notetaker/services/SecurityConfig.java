@@ -27,6 +27,7 @@ public class SecurityConfig {
             // TODO: Add JWT Functionality
             .csrf(csrf -> csrf.disable()
             )
+            .redirectToHttps(Customizer.withDefaults())
             .authorizeHttpRequests(authorize -> authorize
                 .requestMatchers("/api/hello").permitAll()
                 .anyRequest().authenticated()
