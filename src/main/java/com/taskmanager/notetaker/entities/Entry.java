@@ -13,6 +13,7 @@ import lombok.Setter;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 
+
 @Entity
 @Table(name = "notes")
 @Getter @Setter
