@@ -30,9 +30,9 @@ public class Entry {
     
     Entry() {
 
-        this.subject = "EMPTY";
-        this.title = "EMPTY";
-        this.note = "EMPTY";
+        this.subject = "NULL";
+        this.title = "NULL";
+        this.note = "NULL";
 
     }
 
