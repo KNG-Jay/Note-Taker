@@ -1,7 +1,5 @@
 package com.taskmanager.notetaker.services;
 
-import java.util.List;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.taskmanager.notetaker.entities.Entry;
 

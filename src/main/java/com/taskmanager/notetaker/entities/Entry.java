@@ -3,6 +3,7 @@ package com.taskmanager.notetaker.entities;
 import java.util.Objects;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,6 +14,7 @@ import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 
 @Entity
+@Table(name = "notes")
 @Getter @Setter
 @AllArgsConstructor
 public class Entry {
