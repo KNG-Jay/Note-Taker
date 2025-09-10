@@ -53,7 +53,7 @@ public class Entry {
 
     @Override
     public String toString() {
-        return String.format("Account{id=%s, subject=%s, title=%s, note=%s}",
+        return String.format("Account{id=%s,subject=%s,title=%s,note=%s}",
         this.id, this.subject, this.title, this.note
         );
     }

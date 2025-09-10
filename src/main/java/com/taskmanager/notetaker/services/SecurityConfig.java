@@ -1,6 +1,5 @@
 package com.taskmanager.notetaker.services;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
@@ -15,28 +14,30 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.security.config.Customizer;
 
 import java.util.Arrays;
-import java.util.List;
 
 
 @Configuration
-@EnableWebSecurity
+@EnableWebSecurity(debug = true)
 public class SecurityConfig {
-
-    @Value("${cors.allowed-origins}")
-    private String allowedOrigins;
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
             .cors(Customizer.withDefaults())
-            .csrf(csrf -> csrf//.csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
-                                .disable())
+            // TODO: Add JWT Functionality
+            .csrf(csrf -> csrf.disable()
+            )
             .authorizeHttpRequests(authorize -> authorize
-                .anyRequest().authenticated())
+                .requestMatchers("/api/hello").permitAll()
+                .anyRequest().authenticated()
+            )
+            .httpBasic(Customizer.withDefaults())
             .sessionManagement(session -> session
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+            )
             .exceptionHandling(ex -> ex
-                .authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED)));
+                .authenticationEntryPoint(new HttpStatusEntryPoint(HttpStatus.UNAUTHORIZED))
+            );
             
         return http.build();
 
@@ -45,12 +46,13 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        List<String> allowedOrigins = Arrays.asList(this.allowedOrigins.split(","));
-        configuration.setAllowedOrigins(allowedOrigins);
+        configuration.setAllowedOrigins(Arrays
+                        .asList("http://localhost:*"));
         configuration.setAllowedMethods(Arrays
                         .asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(Arrays.asList("*"));
-        configuration.setExposedHeaders(Arrays.asList("Access-Control-Allow-Origin", "X-XSRF-TOKEN"));
+        configuration.setExposedHeaders(Arrays
+                        .asList("Access-Control-Allow-Origin", "X-XSRF-TOKEN"));
         configuration.setAllowCredentials(true);
         configuration.setMaxAge(1800L);
 
