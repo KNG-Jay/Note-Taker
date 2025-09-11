@@ -7,6 +7,7 @@ const NotFound = () => {
             <p>Consider checking the logs for further information</p>
         </div>
     );
+    
 };
 
 export default NotFound;

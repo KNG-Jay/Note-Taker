@@ -6,9 +6,9 @@ import CreateEntryPage from './pages/CreateEntryPage';
 import EntryPage from './pages/EntryPage';
 import EntriesPage from './pages/EntriesPage';
 import EditEntryPage from './pages/EditEntryPage';
-import { Navbar } from './components/Navbar';
-import { Footer } from './components/Footer';
 import NotFound from './pages/NotFound';
+import { Navbar } from './components/layout/Navbar';
+import { Footer } from './components/layout/Footer';
 
 
 const App = () => {
