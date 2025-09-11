@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import SearchBar from './SearchBar';
 import './Navbar.css';
 
-export const Navbar: React.FC = () => {
+const Navbar: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleMenu = () => {
@@ -27,12 +27,12 @@ export const Navbar: React.FC = () => {
             </div>
 
             <div className={`navbar-menu ${isOpen ? 'active' : ''}`}>
-                <div className='navbar-start'>
-                    <Link to="/create-note" className="navbar-item" onClick={() => setIsOpen(false)}>
-                        Create Note
-                    </Link>
+                <div className='navbar-menu-items'>
                     <Link to="/home" className="navbar-item" onClick={() => setIsOpen(false)}>
                         Home
+                    </Link>
+                    <Link to="/create-note" className="navbar-item" onClick={() => setIsOpen(false)}>
+                        New Note
                     </Link>
                     <Link to="/about" className="navbar-item" onClick={() => setIsOpen(false)}>
                         About
@@ -41,13 +41,18 @@ export const Navbar: React.FC = () => {
                         Exit
                     </Link>
                 </div>
-                <div className='navbar-splash'>
-                    <h2>Note Manager</h2>
-                </div>
-                <div className='navbar-end'>
-                    <SearchBar></SearchBar>
-                </div>
+            </div>
+
+            <div className='navbar-splash'>
+                <h2>Note Manager</h2>
+            </div>
+
+            <div className='navbar-end'>
+                <p>Search:</p>
+                <SearchBar />
             </div>
         </nav>
-    )
-}
+    );
+};
+
+export default Navbar;

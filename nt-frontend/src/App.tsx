@@ -7,8 +7,8 @@ import EntryPage from './pages/EntryPage';
 import EntriesPage from './pages/EntriesPage';
 import EditEntryPage from './pages/EditEntryPage';
 import NotFound from './pages/NotFound';
-import { Navbar } from './components/layout/Navbar';
-import { Footer } from './components/layout/Footer';
+import Navbar from './components/layout/Navbar';
+import Footer from './components/layout/Footer';
 
 
 const App = () => {
@@ -19,12 +19,13 @@ const App = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/home" element={<HomePage />} />
           <Route path="/exit" element={<ExitPage />} />
-          <Route path="/create-entry" element={<CreateEntryPage />} />
+          <Route path="/create-note" element={<CreateEntryPage />} />
           <Route path="/entries/:id" element={<EntryPage />} />
           <Route path="/entries" element={<EntriesPage />} />
           <Route path="/entries/:id/edit" element={<EditEntryPage />} />
           <Route path="/error" element={<NotFound />} />
           <Route path="*" element={<Navigate to="/error" />} />
+        
         </Routes>
       <Footer />
     </>

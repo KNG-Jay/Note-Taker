@@ -1,0 +1,46 @@
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 30px;
+  width: 100%;
+  background-color: #212529;
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.copyright {
+    color: #6c757d;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* The Following Will Keep Footer At The Bottom */
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding-bottom: 30px;
+}
+
+main {
+    flex: 1 0 auto;
+    margin-bottom: 30px;
+}
+
+/* Responsive Mobile Design */
+@media (max-width: 768px) {
+    .footer-content {
+        padding: 0 1rem;
+    }
+}
+
