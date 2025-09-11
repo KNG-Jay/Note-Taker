@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import SearchBar from './SearchBar';
 import './Navbar.css';
+import CreateIcon from '/src/assets/CreateIcon.svg?react';
 
 const Navbar: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -28,16 +29,24 @@ const Navbar: React.FC = () => {
 
             <div className={`navbar-menu ${isOpen ? 'active' : ''}`}>
                 <div className='navbar-menu-items'>
+                    {/*
+                    <a href="/create-note" target='_blank' rel='noopener noreferrer'>
+                        <CreateIcon />
+                    </a>
+                    */}
+                    <Link to="/create-note" className="navbar-item-icon" onClick={() => setIsOpen(false)}>
+                        <CreateIcon className='navbar-item-icon'
+                                    width={40} 
+                                    height={40}
+                                    />
+                    </Link>
                     <Link to="/home" className="navbar-item" onClick={() => setIsOpen(false)}>
                         Home
-                    </Link>
-                    <Link to="/create-note" className="navbar-item" onClick={() => setIsOpen(false)}>
-                        New Note
                     </Link>
                     <Link to="/about" className="navbar-item" onClick={() => setIsOpen(false)}>
                         About
                     </Link>
-                    <Link to="/exit" className="navbar-item" onClick={() => setIsOpen(false)}>
+                    <Link to="/exit" className="navbar-item-exit" onClick={() => setIsOpen(false)}>
                         Exit
                     </Link>
                 </div>

@@ -18,10 +18,11 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
     return (
         <div className="search-bar">
             <input
-                type="text"
+                type="search"
                 placeholder="Search..."
                 value={searchTerm}
                 onChange={handleChange}
+                className="w-full"
             />
         </div>
     );
@@ -29,3 +30,6 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
 };
 
 export default SearchBar;
+
+
+// TODO: ADD SEARCH LOGIC
