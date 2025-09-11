@@ -51,7 +51,7 @@
     border-radius: 4px;
     transition: background-color 0.2s;
 }
-
+/* TODO: Configure Icon Color */
 .navbar-item-icon {
     filter: hue-rotate(45deg);
     fill:#f8f9;
