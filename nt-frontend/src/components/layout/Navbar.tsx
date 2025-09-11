@@ -42,14 +42,16 @@ const Navbar: React.FC = () => {
                     </Link>
                 </div>
             </div>
-
+            {/*
             <div className='navbar-splash'>
                 <h2>Note Manager</h2>
             </div>
-
+            */}
             <div className='navbar-end'>
-                <p>Search:</p>
-                <SearchBar />
+                <div className='search-bar-container'>
+                    <label>Search:&nbsp;&nbsp;</label>
+                    <SearchBar />
+                </div>
             </div>
         </nav>
     );
