@@ -9,6 +9,7 @@ import EditEntryPage from './pages/EditEntryPage';
 import NotFound from './pages/NotFound';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
+import AboutPage from './components/About';
 
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/home" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
           <Route path="/exit" element={<ExitPage />} />
           <Route path="/create-note" element={<CreateEntryPage />} />
           <Route path="/entries/:id" element={<EntryPage />} />
