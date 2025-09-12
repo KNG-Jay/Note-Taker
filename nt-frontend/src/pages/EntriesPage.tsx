@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import APIService from "../services/APIService";
 import { useNavigate } from "react-router-dom";
+import type { Entry } from "../components/EntryType";
 
 const EntriesPage: React.FC = () => {
-    const [data, setData] = useState<any[]>([]);
+    const [data, setData] = useState<Entry[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
-    const navigate = useNavigate();
+    const [rowCount, setRowCount] = useState<number>(0);    const navigate = useNavigate();
 
     useEffect (() => {
         setLoading(true);
@@ -17,6 +18,7 @@ const EntriesPage: React.FC = () => {
         APIService.getEntries()
         .then(response => {
             setData(response.data);
+            setRowCount(response.data.length);
         })
         .catch(e => {
             console.error(e);
@@ -30,7 +32,7 @@ const EntriesPage: React.FC = () => {
     return (
         <div className="entries-page">
             <div className="title-bar">
-                <h2>Entries:</h2>
+                <h2>Entries: {rowCount}</h2>
             </div>
             <div className="entries-container">
                 <table className="entries-table">
@@ -66,7 +68,7 @@ const EntriesPage: React.FC = () => {
                     </tbody>
                 </table>
                 <div className="entries-container-footer">
-                    
+
                 </div>
             </div>
         </div>
