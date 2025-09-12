@@ -30,10 +30,10 @@ public class EntryController {
     }
 
 
-    @GetMapping("/hello")
-    public String sayHello() {
+    @GetMapping("/con")
+    public String checkConnection() {
 
-        return "Hello, RESTful API Is Active";
+        return "Connection Is Active!";
 
     }
 

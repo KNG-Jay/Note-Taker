@@ -3,6 +3,7 @@ import APIService from "../services/APIService";
 import { useNavigate } from "react-router-dom";
 import type { Entry } from "../components/EntryType";
 
+
 const EntriesPage: React.FC = () => {
     const [data, setData] = useState<Entry[]>([]);
     const [loading, setLoading] = useState<boolean>(true);

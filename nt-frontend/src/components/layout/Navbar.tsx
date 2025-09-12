@@ -4,6 +4,7 @@ import SearchBar from './SearchBar';
 import './Navbar.css';
 import CreateIcon from '/src/assets/CreateIcon.svg?react';
 
+// TODO: CREATE A CONNECTION CHECKER
 const Navbar: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
 
