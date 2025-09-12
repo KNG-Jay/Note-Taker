@@ -33,9 +33,12 @@ const EntriesPage: React.FC = () => {
     return (
         <div className="entries-page">
             <div className="title-bar">
-                <h2>Entries: {rowCount}</h2>
+                
             </div>
             <div className="entries-container">
+                <div className="entries-container-header">
+                    <h2>Entries: {rowCount}</h2>
+                </div>
                 <table className="entries-table">
                     <thead>
                         <tr>

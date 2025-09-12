@@ -41,6 +41,9 @@
   color: #888;
 }
 
+
+/* ======= Entries Page ======= */
+
 .entries-page {
 
 }
@@ -48,3 +51,39 @@
 .entries-page .title-bar {
   
 }
+
+.entries-page .entries-container {
+  
+}
+
+.entries-page .entries-container .entries-container-header {
+  display: flex;
+  align-items: start;
+  margin-left: 1em;
+  margin-bottom: 1em;
+}
+
+.entries-page .entries-container .entries-table {
+  background-color: darkcyan;
+}
+
+.entries-page .entries-container .entries-container-footer {
+
+}
+
+.entries-table-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.entries-table-buttons .button-view {
+  color: aqua;
+}
+
+.entries-table-buttons .button-delete {
+  color: crimson;
+}
+
+
+/* ======= Entry Page ======= */
+
