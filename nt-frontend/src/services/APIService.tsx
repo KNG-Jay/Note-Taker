@@ -12,12 +12,12 @@ class ApiService {
 
     }
 
-    create(entry: any) {
+    create(entry: object) {
         return ApiClient.post("/create-note", entry);
 
     }
 
-    update(id: number, entry: any) {
+    update(id: number, entry: object) {
         return ApiClient.put(`/entries/${id}`, entry)
 
     }

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import APIService from "../services/APIService";
 import { useNavigate } from "react-router-dom";
+import APIService from "../services/APIService";
 import type { Entry } from "../components/EntryType";
 
 
@@ -23,10 +23,12 @@ const EntriesPage: React.FC = () => {
         })
         .catch(e => {
             console.error(e);
+            setLoading(false);
         });
         
         setLoading(false);
     };
+
 
     if (loading) return <div>Loading...</div>
 
@@ -60,11 +62,13 @@ const EntriesPage: React.FC = () => {
                                         onClick={() => navigate(`/entries/${entry.id}`)}>
                                             View
                                         </button>
+                                        {/*
                                         <button
                                         className="button-delete"
                                         onClick={() => console.error("Not Configured")}>
                                             Delete
                                         </button>
+                                        */}
                                     </div>
                                 </td>
                             </tr>
