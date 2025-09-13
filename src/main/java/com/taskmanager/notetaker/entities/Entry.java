@@ -24,6 +24,7 @@ public class Entry {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Setter(AccessLevel.NONE)
     private Long id;
+
     private String subject;
     private String title;
     private String note;
@@ -54,7 +55,7 @@ public class Entry {
 
     @Override
     public String toString() {
-        return String.format("Account{id=%s,subject=%s,title=%s,note=%s}",
+        return String.format("Entry{id=%s,subject=%s,title=%s,note=%s}",
         this.id, this.subject, this.title, this.note
         );
     }

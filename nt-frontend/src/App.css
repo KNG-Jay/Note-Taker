@@ -44,6 +44,18 @@
 
 /* ======= HOME PAGE ======= */
 
+.home-page {
+
+}
+
+.home-page .welcome-message {
+
+}
+
+.home-page .button-container {
+  display: flex;
+  flex-direction: column;
+}
 
 
 /* ======= NOT FOUND PAGE ======= */
@@ -57,7 +69,7 @@
 }
 
 .exit-page-text {
-  
+
 }
 
 

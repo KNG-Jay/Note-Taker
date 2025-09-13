@@ -49,9 +49,16 @@ public class EntryService {
 
     }
 
-    public Entry deleteEntry(Long id) {
+    public String deleteEntry(Long id) {
 
-        return repository.findById(id).orElse(null);
+        try {
+            repository.deleteById(id);
+            return "Deletion Successful";
+            
+        } catch (Exception e) {
+            return "Deletion Failed: %s";
+
+        }
 
     }
 

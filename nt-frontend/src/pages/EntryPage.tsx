@@ -19,7 +19,7 @@ const EntryPage: React.FC = () => {
 
 
     const getData = () => {
-        console.log("ID Recieved: " + Number(id));
+        console.log("ID Recieved: ", Number(id));
         APIService.get(Number(id))
         .then(response => {
             setData(response.data);
@@ -48,11 +48,11 @@ const EntryPage: React.FC = () => {
     const handleDelete = () => {
         APIService.delete(Number(id))
         .then(response => {
-            console.log("Deletion Complete: " + response.data);
+            console.log("Deletion Attempt Response: ", response.data);
             handleBack();
         })
         .catch(e => {
-            console.error(e);
+            console.error("Error Deleting: ", e);
             setError(e);
         });
 

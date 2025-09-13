@@ -1,11 +1,22 @@
+import EntryCreate from "../components/EntryCreate";
 
-const CreateEntryPage = () => {
 
+const CreateEntryPage: React.FC = () => {
+    
     return (
-        <div className="filler">
-            <h1>Create Entry Page Is Working :)</h1>
+        <div className="create-page">
+            <div className="create-page-header">
+
+            </div>
+            <div className="create-component">
+                <EntryCreate />
+            </div>
+            <div className="create-page-footer">
+                
+            </div>
         </div>
     );
+
 };
 
 export default CreateEntryPage;

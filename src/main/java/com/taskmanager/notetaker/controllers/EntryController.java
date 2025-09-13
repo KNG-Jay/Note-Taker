@@ -67,7 +67,7 @@ public class EntryController {
     }
     
     @DeleteMapping("/entries/{id}")
-    public Entry deleteNote(@PathVariable Long id) {
+    public String deleteNote(@PathVariable Long id) {
 
         return entryService.deleteEntry(id);
 

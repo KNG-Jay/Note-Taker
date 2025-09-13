@@ -10,11 +10,11 @@ const HomePage = () => {
                 <p>You have sucessfully connected to the frontend service!</p>
             </div>
             <div className="button-container">
-                <button className="create-button" onClick={() => navigate('/create-note')}>
-                    Create Note
-                </button>
                 <button className="view-button" onClick={() => navigate('/entries')}>
                     All Notes
+                </button>
+                <button className="create-button" onClick={() => navigate('/create-note')}>
+                    Create Note
                 </button>
             </div>
         </div>

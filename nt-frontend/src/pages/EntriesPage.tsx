@@ -33,15 +33,20 @@ const EntriesPage: React.FC = () => {
 
     if (loading) {
         return (
-            <div>Loading...</div>
+            <div>Loading Entries...</div>
         );
 
     };
 
     return (
         <div className="entries-page">
-            <div className="title-bar">
-                
+            <div className="button-container">
+                <button onClick={() => navigate('/home')} className="button-home">
+                    Home
+                </button>
+                <button onClick={() => navigate('/create-note')} className="button-create">
+                    Create Note
+                </button>
             </div>
             <div className="entries-container">
                 <div className="entries-container-header">
