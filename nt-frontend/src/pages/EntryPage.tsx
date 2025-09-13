@@ -32,6 +32,7 @@ const EntryPage: React.FC = () => {
         });
 
         setLoading(false);
+
     };
 
     const handleBack = () => {
@@ -53,13 +54,12 @@ const EntryPage: React.FC = () => {
         .catch(e => {
             console.error(e);
             setError(e);
-        })
+        });
 
-    }
+    };
 
 
     if (loading) {
-
         return (
             <div>Loading Entry...</div>
         );
@@ -67,7 +67,6 @@ const EntryPage: React.FC = () => {
     };
 
     if (error) {
-        
         return (
             <div>
                 <p style={{ color: 'red' }}>ERROR: {error}</p>
@@ -80,7 +79,6 @@ const EntryPage: React.FC = () => {
     };
 
     if (!data) {
-        
         return (
             <div className="entry-page-error-container">
                 <p>Entry Not Found.</p>

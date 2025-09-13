@@ -27,10 +27,16 @@ const EntriesPage: React.FC = () => {
         });
         
         setLoading(false);
+        
     };
 
 
-    if (loading) return <div>Loading...</div>
+    if (loading) {
+        return (
+            <div>Loading...</div>
+        );
+
+    };
 
     return (
         <div className="entries-page">
@@ -81,6 +87,7 @@ const EntriesPage: React.FC = () => {
             </div>
         </div>
     );
+
 };
 
 export default EntriesPage;

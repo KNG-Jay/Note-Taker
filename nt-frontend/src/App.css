@@ -42,7 +42,26 @@
 }
 
 
-/* ======= Entries Page ======= */
+/* ======= HOME PAGE ======= */
+
+
+
+/* ======= NOT FOUND PAGE ======= */
+
+
+
+/* ======= EXIT PAGE ======= */
+
+.exit-page {
+
+}
+
+.exit-page-text {
+  
+}
+
+
+/* ======= ENTRIES PAGE ======= */
 
 .entries-page {
 
@@ -86,4 +105,57 @@
 
 
 /* ======= Entry Page ======= */
+
+.entry-page {
+
+}
+
+.entry-container-header {
+  display: flex;
+  margin: 2rem;
+}
+
+.entry-container-header-button-back {
+
+}
+
+.entry-container-header-button-edit {
+
+}
+
+.entry-container-header-button-delete {
+  color: crimson;
+}
+
+.entry-container {
+  margin: 1rem;
+  
+}
+
+.entry-container .entry-subject {
+  display: flex;
+  align-items: center;
+}
+
+.entry-container .entry-title {
+  display: flex;
+  align-items: center;
+}
+
+.entry-container .entry-note {
+  display: flex;
+  align-items: center;
+}
+
+.entry-container-footer {
+
+}
+
+
+/* ======= CREATE ENTRY PAGE ======= */
+
+
+
+/* ======= EDIT ENTRY PAGE ======= */
+
 
